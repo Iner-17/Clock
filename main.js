@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
             image.src = 'images/b.jpg';
         } else if (time == 12) {
             image.src = 'images/a.png';
-        } else if (time == 19) {
+        } else if (time == 21) {
             image.src = 'images/c.jpg';
         } else {
             image.src = 'images/d.jpg';

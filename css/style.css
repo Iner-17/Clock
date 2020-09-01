@@ -38,15 +38,13 @@ body {
 }
 
 .clock-container .time {
-    text-shadow: 3px 3px 1px blue;
-    font-size: 2em;
+    text-shadow: 5px 5px 1px blue;
 }
 
 .img-container {
     margin: 50px auto;
     height: 400px;
     width: 400px;
-
 }
 
 img {
