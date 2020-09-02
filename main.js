@@ -1,93 +1,95 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let breakfast = 8;
-    let lunch = 14;
-    let dinner = 20;
+	let breakfast;
+	let lunch;
+	let dinner;
 
-    function showCurrentTime() {
-        const time = document.querySelector('.time');
+	function showCurrentTime() {
+		const time = document.querySelector('.time');
 
-        let fullTime = new Date();
-        let hours = fullTime.getHours();
-        let minutes = fullTime.getMinutes();
-        let seconds = fullTime.getSeconds();
-        let meridian = 'AM';
+		let fullTime = new Date();
+		let hours = fullTime.getHours();
+		let minutes = fullTime.getMinutes();
+		let seconds = fullTime.getSeconds();
+		let meridian = 'AM';
 
+		//set hours
+		if (hours >= 12) {
+			meridian = 'PM';
+		}
 
-        //set hours
-        if (hours >= 12) {
-            meridian = 'PM'
-        }
+		if (hours > 12) {
+			hours = hours - 12;
+		}
+		//set minutes
+		if (minutes < 10) {
+			minutes = '0' + minutes;
+		}
+		//set seconds
+		if (seconds < 10) {
+			seconds = '0' + seconds;
+		}
 
-        if (hours > 12) {
-            hours = hours - 12;
-        }
-        //set minutes
-        if (minutes < 10) {
-            minutes = '0' + minutes;
-        }
-        //set seconds
-        if (seconds < 10) {
-            seconds = '0' + seconds;
-        }
+		time.textContent = `${hours}:${minutes}:${seconds} ${meridian}!!`;
+	}
+	showCurrentTime();
 
-        time.textContent = `${hours}:${minutes}:${seconds} ${meridian}!!`;
-    }
-    showCurrentTime();
+	//set the breakfast time
+	// document.querySelector('#breakfast-btn').onclick = () => {
+	// 	breakfast = document.querySelector('#breakfast').value;
+	// 	breakfast = +breakfast;
+	// 	let image = document.querySelector('#image');
+	// 	let time = new Date().getHours();
 
-    //set the breakfast time
-    document.querySelector('#breakfast-btn').onclick = () => {
-        breakfast = document.querySelector('#breakfast').value;
-        breakfast = +breakfast
-        let image = document.querySelector('#image');
-        let time = new Date().getHours();
+	// 	if (time === breakfast) {
+	// 		image.src = '../images/b.jpg';
+	// 	} else if (time === lunch) {
+	// 		image.src = '../images/a.png';
+	// 	} else if (time === dinner) {
+	// 		image.src = '../images/c.jpg';
+	// 	} else {
+	// 		image.src = '../images/d.jpg';
+	// 	}
+	// };
+	// //set the lunch time
+	// document.querySelector('#lunch-btn').onclick = () => {
+	// 	lunch = document.querySelector('#lunch').value;
+	// 	lunch = +lunch;
+	// 	let image = document.querySelector('#image');
+	// 	let time = new Date().getHours();
 
-        if (time === breakfast) {
-            image.src = '../images/b.jpg';
-        } else if (time === lunch) {
-            image.src = '../images/a.png'
-        } else if (time === dinner) {
-            image.src = '../images/c.jpg'
-        } else {
-            image.src = '../images/d.jpg'
-        }
-    }
-    //set the lunch time
-    document.querySelector('#lunch-btn').onclick = () => {
-        lunch = document.querySelector('#lunch').value;
-        lunch = +lunch
-        let image = document.querySelector('#image');
-        let time = new Date().getHours();
+	// 	if (time === breakfast) {
+	// 		image.src = '../images/b.jpg';
+	// 	} else if (time === lunch) {
+	// 		image.src = '../images/a.png';
+	// 	} else if (time === dinner) {
+	// 		image.src = '../images/c.jpg';
+	// 	} else {
+	// 		image.src = '../images/d.jpg';
+	// 	}
+	// };
+	//set the dinner time
+	document.querySelector('#dinner-btn').onclick = () => {
+		breakfast = document.querySelector('#breakfast').value;
+		breakfast = +breakfast;
+		lunch = document.querySelector('#lunch').value;
+		lunch = +lunch;
+		dinner = document.querySelector('#dinner').value;
+		dinner = +dinner;
+		let image = document.querySelector('#image');
+		let time = new Date().getHours();
 
-        if (time === breakfast) {
-            image.src = '../images/b.jpg';
-        } else if (time === lunch) {
-            image.src = '../images/a.png'
-        } else if (time === dinner) {
-            image.src = '../images/c.jpg'
-        } else {
-            image.src = '../images/d.jpg'
-        }
-    }
-    //set the dinner time
-    document.querySelector('#dinner-btn').onclick = () => {
-        dinner = document.querySelector('#dinner').value;
-        dinner = +dinner
-        let image = document.querySelector('#image');
-        let time = new Date().getHours();
+		if (time === breakfast) {
+			image.src = '../images/b.jpg';
+		} else if (time === lunch) {
+			image.src = '../images/a.png';
+		} else if (time === dinner) {
+			image.src = '../images/c.jpg';
+		} else {
+			image.src = '../images/d.jpg';
+		}
+	};
 
-        if (time === breakfast) {
-            image.src = '../images/b.jpg';
-        } else if (time === lunch) {
-            image.src = '../images/a.png'
-        } else if (time === dinner) {
-            image.src = '../images/c.jpg'
-        } else {
-            image.src = '../images/d.jpg'
-        }
-    }
-
-    //incrementing 1s every 1s yeah
-    var oneSecond = 1000;
-    setInterval(showCurrentTime, oneSecond);
-
+	//incrementing 1s every 1s yeah
+	var oneSecond = 1000;
+	setInterval(showCurrentTime, oneSecond);
 });
