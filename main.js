@@ -79,13 +79,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		let time = new Date().getHours();
 
 		if (time === breakfast) {
-			image.src = '../images/b.jpg';
+			image.src = 'images/b.jpg';
 		} else if (time === lunch) {
-			image.src = '../images/a.png';
+			image.src = 'images/a.png';
 		} else if (time === dinner) {
-			image.src = '../images/c.jpg';
+			image.src = 'images/c.jpg';
 		} else {
-			image.src = '../images/d.jpg';
+			image.src = 'images/d.jpg';
 		}
 	};
 
