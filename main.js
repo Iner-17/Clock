@@ -1,21 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-    //set time
-
-    // let wakeuptime = 7;
-    // let noon = 12;
-    // let lunchtime = 12;
-    // let naptime = lunchtime + 2;
-    // let partytime;
-    // let evening = 18;
+    let breakfast = 8;
+    let lunch = 14;
+    let dinner = 20;
 
     function showCurrentTime() {
         const time = document.querySelector('.time');
 
         let fullTime = new Date();
         let hours = fullTime.getHours();
-        let minutes = fullTime.getMinutes()
-        let seconds = fullTime.getSeconds()
+        let minutes = fullTime.getMinutes();
+        let seconds = fullTime.getSeconds();
         let meridian = 'AM';
+
 
         //set hours
         if (hours >= 12) {
@@ -38,22 +34,60 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     showCurrentTime();
 
-    function updateClock() {
+    //set the breakfast time
+    document.querySelector('#breakfast-btn').onclick = () => {
+        breakfast = document.querySelector('#breakfast').value;
+        breakfast = +breakfast
         let image = document.querySelector('#image');
-        let time = new Date().getHours()
+        let time = new Date().getHours();
 
-        if (time == 8) {
-            image.src = 'images/b.jpg';
-        } else if (time == 12) {
-            image.src = 'images/a.png';
-        } else if (time == 21) {
-            image.src = 'images/c.jpg';
+        if (time === breakfast) {
+            image.src = '../images/b.jpg';
+        } else if (time === lunch) {
+            image.src = '../images/a.png'
+        } else if (time === dinner) {
+            image.src = '../images/c.jpg'
         } else {
-            image.src = 'images/d.jpg';
+            image.src = '../images/d.jpg'
         }
     }
-    updateClock();
+    //set the lunch time
+    document.querySelector('#lunch-btn').onclick = () => {
+        lunch = document.querySelector('#lunch').value;
+        lunch = +lunch
+        let image = document.querySelector('#image');
+        let time = new Date().getHours();
 
+        if (time === breakfast) {
+            image.src = '../images/b.jpg';
+        } else if (time === lunch) {
+            image.src = '../images/a.png'
+        } else if (time === dinner) {
+            image.src = '../images/c.jpg'
+        } else {
+            image.src = '../images/d.jpg'
+        }
+    }
+    //set the dinner time
+    document.querySelector('#dinner-btn').onclick = () => {
+        dinner = document.querySelector('#dinner').value;
+        dinner = +dinner
+        let image = document.querySelector('#image');
+        let time = new Date().getHours();
+
+        if (time === breakfast) {
+            image.src = '../images/b.jpg';
+        } else if (time === lunch) {
+            image.src = '../images/a.png'
+        } else if (time === dinner) {
+            image.src = '../images/c.jpg'
+        } else {
+            image.src = '../images/d.jpg'
+        }
+    }
+
+    //incrementing 1s every 1s yeah
     var oneSecond = 1000;
     setInterval(showCurrentTime, oneSecond);
+
 });

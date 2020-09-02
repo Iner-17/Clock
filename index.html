@@ -16,8 +16,24 @@
                 <img id="image" src="images/a.png" alt="lunch time">
             </div>
             <h1 class="time"></h1>
-
-        </div>
+            <div class="set-container">
+                <div class="label-container">
+                    <label for="breakfast">Breakfast</label>
+                    <label for="lunch">Lunch</label>
+                    <label for="dinner">Dinner</label>
+                </div>
+                <div class="input-container">
+                    <input type="number" max="24" name="breakfast" id="breakfast" placeholder="1 - 24">
+                    <input type="number" max="24" name="lunch" id="lunch" placeholder="1 - 24">
+                    <input type="number" max="24" name="dinner" id="dinner" placeholder="1 - 24">
+                </div>
+                <div class="btn-container">
+                    <button id="breakfast-btn">Set</button>
+                    <button id="lunch-btn">Set</button>
+                    <button id="dinner-btn">Set</button>
+                </div>
+            </div>
+        </div>    
     </div>
     <script src="main.js"></script>
 </body>
