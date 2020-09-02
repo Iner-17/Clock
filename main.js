@@ -33,42 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	showCurrentTime();
 
-	//set the breakfast time
-	// document.querySelector('#breakfast-btn').onclick = () => {
-	// 	breakfast = document.querySelector('#breakfast').value;
-	// 	breakfast = +breakfast;
-	// 	let image = document.querySelector('#image');
-	// 	let time = new Date().getHours();
-
-	// 	if (time === breakfast) {
-	// 		image.src = '../images/b.jpg';
-	// 	} else if (time === lunch) {
-	// 		image.src = '../images/a.png';
-	// 	} else if (time === dinner) {
-	// 		image.src = '../images/c.jpg';
-	// 	} else {
-	// 		image.src = '../images/d.jpg';
-	// 	}
-	// };
-	// //set the lunch time
-	// document.querySelector('#lunch-btn').onclick = () => {
-	// 	lunch = document.querySelector('#lunch').value;
-	// 	lunch = +lunch;
-	// 	let image = document.querySelector('#image');
-	// 	let time = new Date().getHours();
-
-	// 	if (time === breakfast) {
-	// 		image.src = '../images/b.jpg';
-	// 	} else if (time === lunch) {
-	// 		image.src = '../images/a.png';
-	// 	} else if (time === dinner) {
-	// 		image.src = '../images/c.jpg';
-	// 	} else {
-	// 		image.src = '../images/d.jpg';
-	// 	}
-	// };
-	//set the dinner time
-	document.querySelector('#dinner-btn').onclick = () => {
+	//set the eating time
+	document.querySelector('#set-btn').onclick = () => {
 		breakfast = document.querySelector('#breakfast').value;
 		breakfast = +breakfast;
 		lunch = document.querySelector('#lunch').value;
